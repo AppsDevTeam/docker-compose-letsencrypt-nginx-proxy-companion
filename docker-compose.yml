@@ -8,7 +8,9 @@ services:
     restart: always
     ports:
       - "${IP:-0.0.0.0}:80:80"
+      - "${IP:-0.0.0.0}:8080:8080"
       - "${IP:-0.0.0.0}:443:443"
+      - "${IP:-0.0.0.0}:4434:4434"
     volumes:
       - ${NGINX_FILES_PATH:-./data}/conf.d:/etc/nginx/conf.d
       - ${NGINX_FILES_PATH:-./data}/vhost.d:/etc/nginx/vhost.d
